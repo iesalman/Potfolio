@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eyad Seleman | Full-Stack MEAN Stack Developer</title>
+  <meta name="description" content="Eyad Seleman is a Full-Stack MEAN Stack Developer specializing in Angular, Node.js, Express.js, MongoDB, secure REST APIs, and scalable web applications." />
+  <meta name="keywords" content="Eyad Seleman, Full-Stack Developer, MEAN Stack, Angular, Node.js, Express.js, MongoDB, TypeScript, RESTful API, Mansoura Egypt" />
+  <meta name="author" content="Eyad Seleman" />
+  <meta name="theme-color" content="#2A2438" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Eyad Seleman | Full-Stack MEAN Stack Developer" />
+  <meta property="og:description" content="Building fast, scalable, and secure web applications from database to user interface using MongoDB, Express.js, Angular, and Node.js." />
+  <meta property="og:site_name" content="Eyad Seleman Portfolio" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232A2438'/><rect x='10' y='10' width='80' height='80' rx='16' fill='%23352F44' stroke='%235C5470' stroke-width='4'/><text x='50' y='64' font-family='sans-serif' font-size='38' font-weight='800' fill='%23DBD8E3' text-anchor='middle'>ES</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader-monogram"><span>ES</span></div>
+    <p class="preloader-label">Initializing System</p>
+    <p class="preloader-name">EYAD SELEMAN / MEAN STACK</p>
+    <div class="preloader-bar"><div id="preloader-fill" class="preloader-fill"></div></div>
+    <div id="preloader-percent" class="preloader-percent">0%</div>
+  </div>
+
+  <!-- Animated Background -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+    <canvas id="bg-canvas"></canvas>
+  </div>
+
+  <!-- Custom Desktop Cursor -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header id="navbar" class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-icon">ES</span>
+        <span class="brand-text">
+          <span class="brand-name">EYAD.SELEMAN</span>
+          <span class="brand-sub">MEAN Stack Engineer</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home" class="nav-link is-active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="availability-pill">
+          <span class="status-dot-wrap">
+            <span class="status-dot-ping"></span>
+            <span class="status-dot"></span>
+          </span>
+          <span>Available for opportunities</span>
+        </div>
+      </div>
+
+      <button type="button" id="nav-toggle" class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div id="mobile-backdrop" class="mobile-backdrop"></div>
+    <div class="mobile-panel" role="dialog" aria-label="Mobile Navigation">
+      <div>
+        <div class="mobile-header">
+          <span class="brand-name">EYAD.SELEMAN</span>
+          <button type="button" id="mobile-close" class="icon-btn" aria-label="Close navigation menu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <div class="availability-pill" style="margin-bottom: 1.25rem; width: 100%; justify-content: center;">
+          <span class="status-dot-wrap"><span class="status-dot-ping"></span><span class="status-dot"></span></span>
+          <span>Available for opportunities</span>
+        </div>
+
+        <nav class="mobile-nav-list" aria-label="Mobile navigation">
+          <a href="#home" class="mobile-nav-link is-active">Home</a>
+          <a href="#about" class="mobile-nav-link">About</a>
+          <a href="#education" class="mobile-nav-link">Education</a>
+          <a href="#experience" class="mobile-nav-link">Experience</a>
+          <a href="#skills" class="mobile-nav-link">Skills</a>
+          <a href="#projects" class="mobile-nav-link">Projects</a>
+          <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
+          <a href="#services" class="mobile-nav-link">Services</a>
+          <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+      </div>
+
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">Get in Touch</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================================================================
+         1. HERO SECTION
+         ================================================================ -->
+    <section id="home" class="section hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="availability-pill">
+            <span class="status-dot-wrap">
+              <span class="status-dot-ping"></span>
+              <span class="status-dot"></span>
+            </span>
+            <span>Available for Full-Time &amp; Freelance Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Eyad Seleman
+            <span class="hero-role text-gradient">Full-Stack MEAN Stack Developer</span>
+          </h1>
+
+          <p class="hero-desc">
+            Building fast, scalable, and secure web applications from database to user interface using MongoDB, Express.js, Angular, and Node.js.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <span>View My Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="highlight-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>Computer &amp; Information Science Graduate</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <span>NTI MEAN Stack Certified</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span>Open to Full-Time &amp; Freelance Roles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive MEAN Terminal -->
+        <div class="terminal-wrap">
+          <div class="terminal-glow" aria-hidden="true"></div>
+          <div class="terminal-card">
+            <div class="terminal-topbar">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-amber"></span>
+                <span class="dot dot-green"></span>
+                <span class="terminal-filename">mean-stack-core.ts</span>
+              </div>
+              <div class="terminal-controls">
+                <button type="button" id="copy-code-btn" class="term-btn" title="Copy code">Copy</button>
+                <button type="button" id="run-code-btn" class="term-btn" title="Simulate execution">▶ Run</button>
+              </div>
+            </div>
+
+            <div class="terminal-tabs" role="tablist" aria-label="Code snippets">
+              <button type="button" class="term-tab is-active" data-tab="mean" role="tab" aria-selected="true">Angular.service</button>
+              <button type="button" class="term-tab" data-tab="api" role="tab" aria-selected="false">Express.route</button>
+              <button type="button" class="term-tab" data-tab="auth" role="tab" aria-selected="false">Jwt.guard</button>
+            </div>
+
+            <pre class="terminal-code"><code id="terminal-code-content"></code></pre>
+
+            <div id="terminal-output" class="terminal-output" aria-live="polite">
+              <span>✓ 200 OK — MEAN Stack Service Initialized [MongoDB: Connected | Express: Active | Angular: Hydrated]</span>
+            </div>
+
+            <div class="mean-pillars">
+              <div class="mean-pillar"><strong>M</strong><span>MongoDB</span></div>
+              <div class="mean-pillar"><strong>E</strong><span>Express.js</span></div>
+              <div class="mean-pillar"><strong>A</strong><span>Angular</span></div>
+              <div class="mean-pillar"><strong>N</strong><span>Node.js</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         2. ABOUT SECTION
+         ================================================================ -->
+    <section id="about" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Profile &amp; Engineering Philosophy</span>
+          <h2 class="section-title">Architecting Resilient Web Applications</h2>
+          <p class="section-subtitle">Turning complex technical requirements into elegant, high-speed digital products.</p>
+        </div>
+
+        <div class="about-top-grid">
+          <article class="glass-card about-narrative">
+            <div>
+              <div class="about-profile-row">
+                <div class="about-avatar">ES</div>
+                <div>
+                  <h3 style="color: #fff; font-size: 1.08rem;">Eyad Seleman</h3>
+                  <p style="margin: 0; font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted);">Full-Stack MEAN Stack Developer</p>
+                </div>
+              </div>
+
+              <p>
+                I am <strong style="color: #fff;">Eyad Seleman</strong>, a Full-Stack Web Developer specializing in the MEAN Stack (MongoDB, Express.js, Angular, and Node.js). With a degree in Computer &amp; Information Science and intensive hands-on training from the National Telecommunication Institute (NTI), I focus on turning complex ideas into responsive, high-performance Single Page Applications (SPAs) backed by clean, well-structured RESTful APIs.
+              </p>
+              <p>
+                Beyond writing maintainable TypeScript and JavaScript code, I prioritize web application security—implementing JWT authentication, role-based access control, and OWASP best practices to ensure every product is reliable and production-ready.
+              </p>
+            </div>
+
+            <div class="about-tags">
+              <span class="about-tag">✓ Single Page Applications (SPAs)</span>
+              <span class="about-tag">✓ RESTful API Contracts</span>
+              <span class="about-tag">✓ OWASP Security Standards</span>
+            </div>
+          </article>
+
+          <div class="about-pillars">
+            <div class="glass-card pillar-card">
+              <div class="pillar-head">
+                <span class="icon-box">🔒</span>
+                <h4 style="color: #fff;">Security by Design</h4>
+              </div>
+              <p>Proactive defenses against token tampering, XSS, injection, and unauthorized access with strict route guards.</p>
+            </div>
+            <div class="glass-card pillar-card">
+              <div class="pillar-head">
+                <span class="icon-box">⚡</span>
+                <h4 style="color: #fff;">Stateless REST Architecture</h4>
+              </div>
+              <p>Decoupled backend services engineered with Express controllers, async error interceptors, and Mongoose validation.</p>
+            </div>
+            <div class="glass-card pillar-card">
+              <div class="pillar-head">
+                <span class="icon-box">🧩</span>
+                <h4 style="color: #fff;">Reactive Front-End Flow</h4>
+              </div>
+              <p>Modular Angular architectures driven by RxJS observables, reactive forms, and declarative route transitions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="capabilities-grid">
+          <div class="glass-card glass-interactive capability-card">
+            <div>
+              <span class="icon-box">◫</span>
+              <h4>Full-Stack Development</h4>
+              <p>Cohesive end-to-end software delivery covering frontend SPAs, backend business logic, and database schemas.</p>
+            </div>
+            <div class="capability-foot"><span>CAPABILITY 01</span><span>●</span></div>
+          </div>
+          <div class="glass-card glass-interactive capability-card">
+            <div>
+              <span class="icon-box">⇄</span>
+              <h4>RESTful API Development</h4>
+              <p>Clean, self-documenting endpoints with robust input validation, error handling, and predictable JSON responses.</p>
+            </div>
+            <div class="capability-foot"><span>CAPABILITY 02</span><span>●</span></div>
+          </div>
+          <div class="glass-card glass-interactive capability-card">
+            <div>
+              <span class="icon-box">🛡</span>
+              <h4>Secure Application Architecture</h4>
+              <p>Implementing JWT authentication, RBAC authorization, and mitigation of OWASP Top 10 vulnerabilities.</p>
+            </div>
+            <div class="capability-foot"><span>CAPABILITY 03</span><span>●</span></div>
+          </div>
+          <div class="glass-card glass-interactive capability-card">
+            <div>
+              <span class="icon-box">📱</span>
+              <h4>Responsive UI Engineering</h4>
+              <p>Performant, mobile-first, and accessible interfaces leveraging Angular, modern CSS, and component design systems.</p>
+            </div>
+            <div class="capability-foot"><span>CAPABILITY 04</span><span>●</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         3. EDUCATION SECTION
+         ================================================================ -->
+    <section id="education" class="section section-tinted reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Academic &amp; Professional Credentials</span>
+          <h2 class="section-title">Education &amp; Accelerator Training</h2>
+          <p class="section-subtitle">Formal foundations in Computer Science paired with intensive engineering training.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-node" aria-hidden="true">🎓</div>
+            <div class="glass-card glass-interactive timeline-card">
+              <div class="card-meta-row">
+                <span class="date-pill">Graduated: 2026</span>
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Degree</span>
+              </div>
+              <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.35rem;">Bachelor's Degree in Computer &amp; Information Science</h3>
+              <p style="font-size: 0.85rem; color: var(--accent-light); margin-bottom: 0.85rem;">Faculty of Computers and Information</p>
+              <p style="font-size: 0.86rem; color: rgba(219, 216, 227, 0.78); font-weight: 300;">
+                Focused on software engineering, data structures, algorithms, database management systems, and web technologies.
+              </p>
+              <div class="topic-pills">
+                <span class="topic-pill">Software Engineering</span>
+                <span class="topic-pill">Data Structures &amp; Algorithms</span>
+                <span class="topic-pill">DBMS &amp; Web Tech</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-node" aria-hidden="true">🏆</div>
+            <div class="glass-card glass-interactive timeline-card">
+              <div class="card-meta-row">
+                <span class="date-pill">2026</span>
+                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Accelerator</span>
+              </div>
+              <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.35rem;">MEAN Stack Web Developer Accelerator Program</h3>
+              <p style="font-size: 0.85rem; color: var(--accent-light); margin-bottom: 0.85rem;">National Telecommunication Institute (NTI)</p>
+              <p style="font-size: 0.86rem; color: rgba(219, 216, 227, 0.78); font-weight: 300;">
+                Intensive practical training covering end-to-end full-stack architecture, Angular SPA engineering, Node.js/Express backend development, MongoDB schema design, and agile delivery.
+              </p>
+              <div class="topic-pills">
+                <span class="topic-pill">Angular SPA</span>
+                <span class="topic-pill">Node.js &amp; Express</span>
+                <span class="topic-pill">MongoDB &amp; Agile</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         4. EXPERIENCE SECTION
+         ================================================================ -->
+    <section id="experience" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Professional Background</span>
+          <h2 class="section-title">Work Experience &amp; Practice</h2>
+          <p class="section-subtitle">Hands-on delivery across intensive engineering programs and client-driven web applications.</p>
+        </div>
+
+        <div class="experience-list">
+          <article class="glass-card glass-interactive experience-card">
+            <div class="exp-header">
+              <div>
+                <span class="tech-badge" style="display: inline-block; margin-bottom: 0.6rem;">01 // Project-Based &amp; Training</span>
+                <h3 style="color: #fff; font-size: 1.3rem;">MEAN Stack Web Developer (Project-Based &amp; Training)</h3>
+                <p style="font-family: var(--font-mono); font-size: 0.8rem; color: rgba(219, 216, 227, 0.78); margin-top: 0.25rem;">
+                  National Telecommunication Institute (NTI) • Egypt
+                </p>
+              </div>
+              <span class="date-pill">2026</span>
+            </div>
+
+            <div class="exp-list">
+              <div class="exp-point"><span>✓</span><span>Architected and deployed full-stack web applications using Angular, Node.js, Express.js, and MongoDB.</span></div>
+              <div class="exp-point"><span>✓</span><span>Built modular front-end interfaces with TypeScript, RxJS, reactive forms, and route guards.</span></div>
+              <div class="exp-point"><span>✓</span><span>Engineered secure RESTful APIs with JWT authentication, Mongoose validation, and Postman endpoint testing.</span></div>
+            </div>
+
+            <div class="tech-bar">
+              <span class="tech-badge">Angular</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Express.js</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">RxJS</span>
+              <span class="tech-badge">JWT</span>
+              <span class="tech-badge">Postman</span>
+            </div>
+          </article>
+
+          <article class="glass-card glass-interactive experience-card">
+            <div class="exp-header">
+              <div>
+                <span class="tech-badge" style="display: inline-block; margin-bottom: 0.6rem;">02 // Independent Practice</span>
+                <h3 style="color: #fff; font-size: 1.3rem;">Freelance Full-Stack Web Developer</h3>
+                <p style="font-family: var(--font-mono); font-size: 0.8rem; color: rgba(219, 216, 227, 0.78); margin-top: 0.25rem;">
+                  Remote / Mansoura, Egypt
+                </p>
+              </div>
+              <span class="date-pill">2025 – Present</span>
+            </div>
+
+            <div class="exp-list">
+              <div class="exp-point"><span>✓</span><span>Developed custom responsive web applications, dynamic dashboards, and CRUD-driven platforms tailored to client requirements.</span></div>
+              <div class="exp-point"><span>✓</span><span>Handled full project lifecycles from database modeling and API integration to front-end deployment and Git version control.</span></div>
+            </div>
+
+            <div class="tech-bar">
+              <span class="tech-badge">JavaScript / TypeScript</span>
+              <span class="tech-badge">Angular</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Express.js</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">REST APIs</span>
+              <span class="tech-badge">Git</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         5. SKILLS SECTION
+         ================================================================ -->
+    <section id="skills" class="section section-tinted reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Technical Toolkit</span>
+          <h2 class="section-title">Skills &amp; Technological Stack</h2>
+          <p class="section-subtitle">Production tooling applied across frontend, backend, databases, and application security.</p>
+        </div>
+
+        <div class="skills-filters" role="tablist" aria-label="Skill categories">
+          <button type="button" class="filter-btn is-active" data-filter="all">All Disciplines (23)</button>
+          <button type="button" class="filter-btn" data-filter="frontend">Front-End (8)</button>
+          <button type="button" class="filter-btn" data-filter="backend">Back-End (4)</button>
+          <button type="button" class="filter-btn" data-filter="databases">Databases (4)</button>
+          <button type="button" class="filter-btn" data-filter="security">Security &amp; Tools (7)</button>
+        </div>
+
+        <div class="skill-groups">
+          <!-- Front-End -->
+          <div class="skill-group" data-category="frontend">
+            <div class="skill-group-head">
+              <h3 style="color: #fff; font-size: 1.2rem;">Front-End Development</h3>
+              <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted);">Responsive, type-safe Single Page Applications</span>
+            </div>
+            <div class="skills-grid">
+              <div class="glass-card glass-interactive skill-card"><h4>Angular</h4><p>Modular components, services, DI &amp; route guards</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>TypeScript</h4><p>Strict static typing, interfaces &amp; generics</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>JavaScript (ES6+)</h4><p>Async/await, closures, modules &amp; DOM APIs</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>RxJS</h4><p>Observables, Subject streams &amp; reactive operators</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>HTML5</h4><p>Semantic markup, web standards &amp; accessibility</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>CSS3</h4><p>Flexbox, CSS Grid, custom properties &amp; animations</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Bootstrap</h4><p>Rapid responsive layout scaffolding &amp; utilities</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Responsive Web Design</h4><p>Mobile-first layouts adaptable across viewports</p></div>
+            </div>
+          </div>
+
+          <!-- Back-End -->
+          <div class="skill-group" data-category="backend">
+            <div class="skill-group-head">
+              <h3 style="color: #fff; font-size: 1.2rem;">Back-End Development</h3>
+              <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted);">Modular servers &amp; predictable RESTful API contracts</span>
+            </div>
+            <div class="skills-grid">
+              <div class="glass-card glass-interactive skill-card"><h4>Node.js</h4><p>Event-driven asynchronous runtime &amp; streams</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Express.js</h4><p>Routing controllers &amp; HTTP request pipelines</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>RESTful APIs</h4><p>Stateless architectures, HTTP semantics &amp; JSON</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Middleware Architecture</h4><p>Auth interceptors, validation &amp; error handling</p></div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-group" data-category="databases">
+            <div class="skill-group-head">
+              <h3 style="color: #fff; font-size: 1.2rem;">Databases</h3>
+              <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted);">High-performance NoSQL schemas &amp; indexing</span>
+            </div>
+            <div class="skills-grid">
+              <div class="glass-card glass-interactive skill-card"><h4>MongoDB</h4><p>Document store &amp; aggregation pipelines</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Mongoose</h4><p>ODM schemas, validation rules &amp; hooks</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>NoSQL Schema Design</h4><p>Embedded vs. referenced data modeling</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Query Optimization</h4><p>Index strategies &amp; lean execution profiling</p></div>
+            </div>
+          </div>
+
+          <!-- Security & Tools -->
+          <div class="skill-group" data-category="security">
+            <div class="skill-group-head">
+              <h3 style="color: #fff; font-size: 1.2rem;">Security &amp; Tools</h3>
+              <span style="font-family: var(--font-mono); font-size: 0.74rem; color: var(--text-muted);">Application hardening &amp; professional workflows</span>
+            </div>
+            <div class="skills-grid">
+              <div class="glass-card glass-interactive skill-card"><h4>JWT Authentication</h4><p>Token lifecycle &amp; Bearer verification</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Role-Based Access Control (RBAC)</h4><p>Granular route guards &amp; permissions</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>OWASP Top 10 Fundamentals</h4><p>Defense against injection, XSS &amp; broken auth</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Git</h4><p>Distributed version control &amp; clean branching</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>GitHub</h4><p>Repositories, code reviews &amp; pull requests</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>Postman</h4><p>API contract testing &amp; collection suites</p></div>
+              <div class="glass-card glass-interactive skill-card"><h4>VS Code</h4><p>Debugging, linting &amp; workspace tooling</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         6. PROJECTS SECTION
+         ================================================================ -->
+    <section id="projects" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Flagship Software Deliveries</span>
+          <h2 class="section-title">Featured Full-Stack Projects</h2>
+          <p class="section-subtitle">Interactive previews built across the MEAN stack — click Inspect Architecture for technical details.</p>
+        </div>
+
+        <div class="projects-stack">
+          <!-- PROJECT 1: CineScope -->
+          <article class="glass-card project-card">
+            <div class="project-grid">
+              <div class="project-info">
+                <div>
+                  <div class="card-meta-row">
+                    <span class="date-pill">PROJECT 01 // Media</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">MEAN Stack</span>
+                  </div>
+                  <h3 style="color: #fff; font-size: 1.65rem;">CineScope</h3>
+                  <p style="font-family: var(--font-mono); font-size: 0.82rem; color: rgba(219, 216, 227, 0.7); margin-bottom: 0.9rem;">Movies &amp; Media Database Platform</p>
+                  <p style="font-size: 0.9rem; color: rgba(219, 216, 227, 0.85); font-weight: 300;">
+                    A dynamic media discovery web application featuring category filtering (Action, Drama, Comedy), a showcase of recent releases, thumbnail previews, and full CRUD functionality for managing titles, genres, cast details, and release years.
+                  </p>
+                  <div class="project-metrics">
+                    <div><strong>&lt; 45ms</strong><span>Query Latency</span></div>
+                    <div><strong>14 Routes</strong><span>CRUD API</span></div>
+                    <div><strong>RESTful SPA</strong><span>Architecture</span></div>
+                  </div>
+                  <div class="tech-bar" style="border-top: none; padding-top: 0;">
+                    <span class="tech-badge">Angular</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <button type="button" class="btn btn-primary open-project-btn" data-project="cinescope">Inspect Architecture</button>
+                  <a href="#projects" class="btn btn-secondary" title="Placeholder until live deployment URL is added">Live Demo (Placeholder)</a>
+                  <a href="#projects" class="icon-btn" aria-label="CineScope GitHub Repository Placeholder" title="GitHub Placeholder">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Interactive CineScope Simulator -->
+              <div class="project-preview">
+                <div class="browser-frame">
+                  <div class="browser-bar">
+                    <div class="window-dots"><span class="dot dot-red"></span><span class="dot dot-amber"></span><span class="dot dot-green"></span></div>
+                    <span class="browser-url">cinescope.placeholder.dev</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.64rem; color: var(--emerald);">● Interactive</span>
+                  </div>
+                  <div class="browser-body">
+                    <div class="sim-top">
+                      <strong style="color: #fff; font-size: 0.8rem;">🎬 CineScope DB</strong>
+                      <input type="search" id="cine-search" class="sim-input" placeholder="Search title..." aria-label="Filter simulated movies" />
+                    </div>
+                    <div class="sim-tabs" id="cine-tabs">
+                      <button type="button" class="sim-tab is-active" data-genre="All">All</button>
+                      <button type="button" class="sim-tab" data-genre="Action">Action</button>
+                      <button type="button" class="sim-tab" data-genre="Drama">Drama</button>
+                      <button type="button" class="sim-tab" data-genre="Comedy">Comedy</button>
+                    </div>
+                    <div class="sim-grid-2" id="cine-grid"></div>
+                    <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); text-align: center;">⚡ Interactive Genre &amp; Search Filter</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: NexusMart -->
+          <article class="glass-card project-card is-reversed">
+            <div class="project-grid">
+              <div class="project-info">
+                <div>
+                  <div class="card-meta-row">
+                    <span class="date-pill">PROJECT 02 // E-Commerce</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">MEAN Stack</span>
+                  </div>
+                  <h3 style="color: #fff; font-size: 1.65rem;">NexusMart</h3>
+                  <p style="font-family: var(--font-mono); font-size: 0.82rem; color: rgba(219, 216, 227, 0.7); margin-bottom: 0.9rem;">Full-Stack E-Commerce Web App</p>
+                  <p style="font-size: 0.9rem; color: rgba(219, 216, 227, 0.85); font-weight: 300;">
+                    An end-to-end online store with JWT user authentication, dynamic product search and filtering, shopping cart state management, and a protected admin dashboard for inventory control.
+                  </p>
+                  <div class="project-metrics">
+                    <div><strong>JWT + RBAC</strong><span>Auth Flow</span></div>
+                    <div><strong>RxJS Store</strong><span>Cart State</span></div>
+                    <div><strong>Protected</strong><span>Admin Panel</span></div>
+                  </div>
+                  <div class="tech-bar" style="border-top: none; padding-top: 0;">
+                    <span class="tech-badge">Angular</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">MongoDB</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <button type="button" class="btn btn-primary open-project-btn" data-project="nexusmart">Inspect Architecture</button>
+                  <a href="#projects" class="btn btn-secondary" title="Placeholder until live deployment URL is added">Live Demo (Placeholder)</a>
+                  <a href="#projects" class="icon-btn" aria-label="NexusMart GitHub Repository Placeholder" title="GitHub Placeholder">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Interactive NexusMart Simulator -->
+              <div class="project-preview">
+                <div class="browser-frame">
+                  <div class="browser-bar">
+                    <div class="window-dots"><span class="dot dot-red"></span><span class="dot dot-amber"></span><span class="dot dot-green"></span></div>
+                    <span class="browser-url">nexusmart.placeholder.dev</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.64rem; color: var(--emerald);">● Interactive</span>
+                  </div>
+                  <div class="browser-body">
+                    <div class="sim-top">
+                      <strong style="color: #fff; font-size: 0.8rem;">🛒 NexusMart</strong>
+                      <div style="display: flex; gap: 0.4rem; align-items: center;">
+                        <button type="button" id="nexus-role-btn" class="sim-tab">Customer Mode</button>
+                        <span id="nexus-cart-count" class="status-badge status-done">🛒 2 items</span>
+                      </div>
+                    </div>
+                    <div class="sim-grid-2">
+                      <div class="sim-item">
+                        <span style="font-family: var(--font-mono); font-size: 0.66rem; color: var(--emerald);">$189.00</span>
+                        <h5 style="color: #fff; font-size: 0.8rem; margin-block: 0.25rem;">Noise-Canceling Pro</h5>
+                        <button type="button" class="sim-tab add-cart-btn" style="width: 100%; margin-top: 0.35rem;">+ Add to Cart</button>
+                      </div>
+                      <div class="sim-item">
+                        <span style="font-family: var(--font-mono); font-size: 0.66rem; color: var(--emerald);">$340.00</span>
+                        <h5 style="color: #fff; font-size: 0.8rem; margin-block: 0.25rem;">Mechanical Key Matrix</h5>
+                        <button type="button" class="sim-tab add-cart-btn" style="width: 100%; margin-top: 0.35rem;">+ Add to Cart</button>
+                      </div>
+                    </div>
+                    <div style="padding: 0.5rem 0.7rem; border-radius: 6px; background: var(--bg-surface); font-family: var(--font-mono); font-size: 0.66rem; display: flex; justify-content: space-between;">
+                      <span id="nexus-role-label">JWT Bearer Token Attached</span>
+                      <span style="color: var(--emerald);">Verified</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: TaskFlow -->
+          <article class="glass-card project-card">
+            <div class="project-grid">
+              <div class="project-info">
+                <div>
+                  <div class="card-meta-row">
+                    <span class="date-pill">PROJECT 03 // Productivity</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">MEAN Stack</span>
+                  </div>
+                  <h3 style="color: #fff; font-size: 1.65rem;">TaskFlow</h3>
+                  <p style="font-family: var(--font-mono); font-size: 0.82rem; color: rgba(219, 216, 227, 0.7); margin-bottom: 0.9rem;">Team Workflow &amp; Task Manager</p>
+                  <p style="font-size: 0.9rem; color: rgba(219, 216, 227, 0.85); font-weight: 300;">
+                    A productivity SPA enabling teams to create, assign, and track tasks across statuses using Angular reactive forms, route guards, and RESTful API endpoints.
+                  </p>
+                  <div class="project-metrics">
+                    <div><strong>Kanban</strong><span>Board Type</span></div>
+                    <div><strong>Reactive</strong><span>Angular Forms</span></div>
+                    <div><strong>Real-Time</strong><span>REST Sync</span></div>
+                  </div>
+                  <div class="tech-bar" style="border-top: none; padding-top: 0;">
+                    <span class="tech-badge">MEAN Stack</span>
+                    <span class="tech-badge">RxJS</span>
+                    <span class="tech-badge">Bootstrap</span>
+                    <span class="tech-badge">TypeScript</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <button type="button" class="btn btn-primary open-project-btn" data-project="taskflow">Inspect Architecture</button>
+                  <a href="#projects" class="btn btn-secondary" title="Placeholder until live deployment URL is added">Live Demo (Placeholder)</a>
+                  <a href="#projects" class="icon-btn" aria-label="TaskFlow GitHub Repository Placeholder" title="GitHub Placeholder">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Interactive TaskFlow Simulator -->
+              <div class="project-preview">
+                <div class="browser-frame">
+                  <div class="browser-bar">
+                    <div class="window-dots"><span class="dot dot-red"></span><span class="dot dot-amber"></span><span class="dot dot-green"></span></div>
+                    <span class="browser-url">taskflow.placeholder.dev</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.64rem; color: var(--emerald);">● Interactive</span>
+                  </div>
+                  <div class="browser-body">
+                    <div class="sim-top">
+                      <strong style="color: #fff; font-size: 0.8rem;">☑ TaskFlow Kanban</strong>
+                      <span style="font-family: var(--font-mono); font-size: 0.64rem; color: var(--text-muted);">Click task to cycle status</span>
+                    </div>
+                    <div id="taskflow-list" style="display: flex; flex-direction: column; gap: 0.55rem;"></div>
+                    <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); text-align: center;">⚡ RxJS Observable Pipeline Synchronized</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         7. TESTIMONIALS SECTION
+         ================================================================ -->
+    <section id="testimonials" class="section section-tinted reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Endorsements &amp; Feedback</span>
+          <h2 class="section-title">Mentor &amp; Client Testimonials</h2>
+          <p class="section-subtitle">Structured placeholders ready to showcase verified feedback on clean code delivery, communication, and execution.</p>
+        </div>
+
+        <div class="two-col-grid">
+          <article class="glass-card glass-interactive testimonial-card">
+            <div>
+              <div class="card-meta-row">
+                <span style="color: var(--amber); font-size: 0.9rem;" aria-label="Placeholder rating">★★★★★</span>
+                <span class="tech-badge" style="font-size: 0.66rem;">Mentor Feedback Placeholder</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                "[Placeholder for NTI Technical Mentor endorsement — highlighting clean code delivery, strong Angular/Node.js architecture, and reliable API integration.]"
+              </blockquote>
+            </div>
+            <div style="padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h4 style="color: #fff; font-size: 0.92rem;">Technical Mentor Name (Placeholder)</h4>
+                <p style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">National Telecommunication Institute (NTI)</p>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">Pending</span>
+            </div>
+          </article>
+
+          <article class="glass-card glass-interactive testimonial-card">
+            <div>
+              <div class="card-meta-row">
+                <span style="color: var(--amber); font-size: 0.9rem;" aria-label="Placeholder rating">★★★★★</span>
+                <span class="tech-badge" style="font-size: 0.66rem;">Client Feedback Placeholder</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                "[Placeholder for Freelance Client review — highlighting strong communication, problem-solving skills, on-time project execution, and professionalism.]"
+              </blockquote>
+            </div>
+            <div style="padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h4 style="color: #fff; font-size: 0.92rem;">Client Name / Role (Placeholder)</h4>
+                <p style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Freelance Web Project</p>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">Pending</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         8. SERVICES SECTION
+         ================================================================ -->
+    <section id="services" class="section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Engineering Capabilities</span>
+          <h2 class="section-title">Specialized Development Services</h2>
+          <p class="section-subtitle">Targeted technical solutions tailored for high-performance web products and modern architectures.</p>
+        </div>
+
+        <div class="two-col-grid">
+          <article class="glass-card glass-interactive service-card">
+            <div>
+              <div class="card-meta-row">
+                <span class="icon-box">◫</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">01 // SERVICE</span>
+              </div>
+              <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.65rem;">Full-Stack Web Application Development</h3>
+              <p style="font-size: 0.88rem; color: rgba(219, 216, 227, 0.8); font-weight: 300; margin-bottom: 1.25rem;">
+                End-to-end development of custom web platforms using MongoDB, Express.js, Angular, and Node.js.
+              </p>
+            </div>
+            <a href="#contact" style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-light);">Inquire about this service →</a>
+          </article>
+
+          <article class="glass-card glass-interactive service-card">
+            <div>
+              <div class="card-meta-row">
+                <span class="icon-box">✦</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">02 // SERVICE</span>
+              </div>
+              <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.65rem;">Single Page Application (SPA) Engineering</h3>
+              <p style="font-size: 0.88rem; color: rgba(219, 216, 227, 0.8); font-weight: 300; margin-bottom: 1.25rem;">
+                Building fast, interactive, and mobile-responsive front-end interfaces with Angular and TypeScript.
+              </p>
+            </div>
+            <a href="#contact" style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-light);">Inquire about this service →</a>
+          </article>
+
+          <article class="glass-card glass-interactive service-card">
+            <div>
+              <div class="card-meta-row">
+                <span class="icon-box">⇄</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">03 // SERVICE</span>
+              </div>
+              <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.65rem;">RESTful API &amp; Backend Architecture</h3>
+              <p style="font-size: 0.88rem; color: rgba(219, 216, 227, 0.8); font-weight: 300; margin-bottom: 1.25rem;">
+                Designing scalable server-side logic, third-party integrations, and secure authentication systems.
+              </p>
+            </div>
+            <a href="#contact" style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-light);">Inquire about this service →</a>
+          </article>
+
+          <article class="glass-card glass-interactive service-card">
+            <div>
+              <div class="card-meta-row">
+                <span class="icon-box">🗄</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">04 // SERVICE</span>
+              </div>
+              <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.65rem;">Database Design &amp; Optimization</h3>
+              <p style="font-size: 0.88rem; color: rgba(219, 216, 227, 0.8); font-weight: 300; margin-bottom: 1.25rem;">
+                Structuring efficient MongoDB schemas, indexing, and data validation with Mongoose.
+              </p>
+            </div>
+            <a href="#contact" style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent-light);">Inquire about this service →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         9. CONTACT SECTION
+         ================================================================ -->
+    <section id="contact" class="section section-tinted reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Direct Communication</span>
+          <h2 class="section-title">Let's Build Something Great Together</h2>
+          <p class="section-subtitle">
+            Looking for a dedicated MEAN Stack Developer for your team or upcoming web project? Reach out directly and let's discuss how I can help.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="glass-card contact-card" style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <h3 style="color: #fff; font-size: 1.2rem;">Contact Coordinates</h3>
+
+            <div style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-subtle);">
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Location</span>
+              <p style="color: #fff; font-weight: 600; font-size: 0.92rem; margin-top: 0.2rem;">Mansoura, Dakahlia, Egypt</p>
+              <p style="font-family: var(--font-mono); font-size: 0.74rem; color: rgba(219, 216, 227, 0.7); margin-top: 0.2rem;">Available for Remote &amp; On-Site Opportunities</p>
+            </div>
+
+            <div style="padding: 1rem; border-radius: 12px; background: var(--bg-main); border: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
+              <div style="overflow: hidden;">
+                <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">Email (Placeholder)</span>
+                <p id="direct-email-text" style="color: #fff; font-weight: 600; font-size: 0.86rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">eyad.seleman.dev@placeholder.com</p>
+              </div>
+              <button type="button" id="copy-email-btn" class="term-btn" aria-label="Copy email address">Copy</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <a href="#contact" class="btn btn-secondary" style="padding: 0.7rem;" title="LinkedIn URL Placeholder">LinkedIn (Placeholder)</a>
+              <a href="#contact" class="btn btn-secondary" style="padding: 0.7rem;" title="GitHub URL Placeholder">GitHub (Placeholder)</a>
+            </div>
+          </aside>
+
+          <div class="glass-card contact-card">
+            <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.3rem;">Send an Inquiry</h3>
+            <p style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1.35rem;">Client-Validated • Accessible • Spam-Protected</p>
+
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+
+            <form id="contact-form" novalidate>
+              <!-- Honeypot field -->
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="website-hp">Leave this field empty</label>
+                <input type="text" id="website-hp" name="honeypot" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="contact-name">Full Name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="contact-name" name="name" required minlength="2" maxlength="100" autocomplete="name" placeholder="e.g. Sarah Jenkins" data-error="name-error" />
+                  <div id="name-error" class="error-msg"><span role="img" aria-label="Error">❌</span> Please enter your full name (at least 2 characters).</div>
+                </div>
+
+                <div class="field">
+                  <label for="contact-email">Email Address <span aria-hidden="true">*</span></label>
+                  <span id="email-hint" class="field-hint">Format: you@example.com</span>
+                  <input type="email" id="contact-email" name="email" required maxlength="120" autocomplete="email" autocorrect="off" autocapitalize="none" spellcheck="false" placeholder="you@example.com" aria-describedby="email-hint" data-error="email-error" />
+                  <div id="email-error" class="error-msg"><span role="img" aria-label="Error">❌</span> Enter an email address in the format you@example.com.</div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="contact-message">Project / Inquiry Details <span aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="message" required minlength="10" maxlength="2000" placeholder="Describe your project timeline, architecture needs, or role details..." data-error="message-error"></textarea>
+                <div id="message-error" class="error-msg"><span role="img" aria-label="Error">❌</span> Please provide inquiry details (at least 10 characters).</div>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.35rem;">
+            <span class="brand-icon" style="width: 32px; height: 32px; font-size: 0.75rem;">ES</span>
+            <strong style="color: #fff; letter-spacing: 0.06em;">EYAD SELEMAN</strong>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Full-Stack MEAN Stack Developer • Mansoura, Egypt</p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.65rem;">
+          <a href="#contact" class="icon-btn" aria-label="GitHub Placeholder" title="GitHub Placeholder">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a href="#contact" class="icon-btn" aria-label="LinkedIn Placeholder" title="LinkedIn Placeholder">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#contact" class="icon-btn" aria-label="Email Placeholder" title="Email Placeholder">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <button type="button" id="back-to-top" class="icon-btn" aria-label="Back to top" title="Back to top">↑</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="copyright-year">2026</span> Eyad Seleman. All rights reserved.</p>
+        <p>Built with pure HTML5, CSS3 &amp; Vanilla JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Native <dialog> Project Architecture Modal -->
+  <dialog id="project-dialog" class="project-dialog" closedby="any" aria-labelledby="dialog-title">
+    <div class="dialog-header">
+      <div>
+        <span id="dialog-category" class="tech-badge" style="margin-right: 0.5rem;"></span>
+        <h1 id="dialog-title" style="display: inline; font-size: 1.1rem; color: #fff;">Project Architecture</h1>
+      </div>
+      <form method="dialog">
+        <button type="submit" class="icon-btn" aria-label="Close modal">✕</button>
+      </form>
+    </div>
+    <div id="dialog-body" class="dialog-body"></div>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
