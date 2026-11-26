@@ -437,10 +437,22 @@
   }
 
   /* ----------------------------------------------------------------------
-     9. Contact Form Validation & ARIA Sync
+     9. Contact Form Validation, Copy Email & Real Mailto Dispatch
      ---------------------------------------------------------------------- */
+  const CONTACT_EMAIL = 'esalman547@gmail.com';
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+
+  copyEmailBtn?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
+      copyEmailBtn.textContent = '✓ Copied';
+      setTimeout(() => { copyEmailBtn.textContent = 'Copy'; }, 1800);
+    } catch {
+      copyEmailBtn.textContent = 'Copy';
+    }
+  });
 
   if (contactForm) {
     const controls = contactForm.querySelectorAll('input[name]:not([name="honeypot"]), textarea[name]');
@@ -535,18 +547,18 @@
               linkError(el, false);
             });
           } else {
-            showStatus('error', 'Unable to send message right now. Please try GitHub (@iesalman).');
+            showStatus('error', 'Unable to send message right now. Please email esalman547@gmail.com directly.');
           }
         } catch {
-          showStatus('error', 'Network error while sending. Please reach out via GitHub (@iesalman).');
+          showStatus('error', 'Network error while sending. Please email esalman547@gmail.com directly.');
         } finally {
           if (submitBtn) submitBtn.disabled = false;
         }
       } else {
-        showStatus(
-          'success',
-          `Thanks, ${name}! Your inquiry is validated and ready. Add a Formspree endpoint in js/main.js to enable direct inbox delivery, or connect via github.com/iesalman.`
-        );
+        const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+        showStatus('success', `Opening your email client to send directly to ${CONTACT_EMAIL}.`);
       }
     });
   }

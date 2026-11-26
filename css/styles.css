@@ -1448,6 +1448,31 @@ button {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-main);
+  word-break: break-word;
+}
+
+.contact-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.mini-copy-btn {
+  padding: 0.3rem 0.65rem;
+  border-radius: 7px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.mini-copy-btn:hover {
+  color: var(--accent-light);
+  border-color: var(--accent-border);
 }
 
 .field-row {
