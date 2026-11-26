@@ -11,7 +11,7 @@ A clean, production-grade **HTML5, CSS3, and Vanilla JavaScript** portfolio for 
 
 ## Contact & Profiles
 - **Email:** `esalman547@gmail.com` / `eyadsalman@std.mans.edu.eg`
-- **LinkedIn:** `https://linkedin.com/in/eyad-seleman`
+- **LinkedIn:** `https://www.linkedin.com/in/eyadseleman/`
 - **GitHub:** `https://github.com/iesalman`
 - **Phone:** `(+20) 1090626177`
 - **Location:** Mansoura, Dakahlia, Egypt
